@@ -14,6 +14,9 @@ function fizz_buzz() {
 
 // fizz_buzz();
 
+
+//------------New function---------------------
+//jQuery uses Object.prototype.toString.call internally to check whether an object is an array or not.
 function checkArray(arr) {
     if (Object.prototype.toString.call(arr) === '[object Array]') {
         console.log("This is an array");
