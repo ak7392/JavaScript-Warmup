@@ -1,19 +1,32 @@
-var InputStack = []
-var OutputStack = []
+var inputStack = []; // First stack
+var outputStack = []; // Second stack
 
-function Enqeue(InputStack, item) {
-    InputStack.push(item)
+// For enqueue, just push the item into the first stack
+function enqueue(stackInput, item) {
+    return stackInput.push(item);
 }
 
-
-function deque(InputStack, OutputStack, item) {
-    if (OutputStack.length <= 0) {
-        while (InputStack.length > 0) {
-            var ItemToOutput = InputStack.pop(item)
-            OutputStack.push(ItemToOutput)
+function dequeue(stackInput, stackOutput) {
+    // Reverse the stack such that the first element of the output stack is the
+    // last element of the input stack. After that, pop the top of the output to
+    // get the first element that was ever pushed into the input stack
+    if (stackOutput.length <= 0) {
+        while (stackInput.length > 0) {
+            var elementToOutput = stackInput.pop();
+            stackOutput.push(elementToOutput);
         }
-
-
     }
-    return OutputStack.pop(item)
+
+    return stackOutput.pop();
 }
+
+enqueue(inputStack, 2);
+enqueue(inputStack, 3);
+enqueue(inputStack, 4);
+console.log(inputStack);
+dequeue(inputStack, outputStack);
+console.log(outputStack);
+dequeue(inputStack, outputStack);
+console.log(outputStack);
+dequeue(inputStack, outputStack);
+console.log(outputStack);
