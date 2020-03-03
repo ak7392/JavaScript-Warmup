@@ -12,4 +12,15 @@ function isAnagram(firstWord, secondWord) {
     return a === b;
 }
 
+
 console.log(isAnagram(firstWord, secondWord));
+
+console.log('\n');
+console.log("--------------------Concept2------------------------");
+console.log("\n");
+var x = 1;
+
+if (function f() {}) {
+    x += typeof f;
+}
+console.log(x);
